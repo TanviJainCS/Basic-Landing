@@ -8,7 +8,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-.bannerBackgroundWrapper {
+/* .bannerBackgroundWrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -17,9 +17,7 @@
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-
-
-}
+} */
 
 .container {
   position: relative;
@@ -46,8 +44,8 @@
   max-width: 600px;
 }
 
-@media (max-width: 1279px) {
+/* @media (max-width: 1279px) {
   .bannerBackgroundWrapper {
     display: none;
   }
-}
+} */
