@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Stack, { fetchBlogs } from '@/lib/contentstack';
-import { Banner } from '@/components/banner';
-import { BlogSection } from '@/components/blog';
+import { Banner } from '../components/Banner';
+import { BlogSection } from '../components/BlogSection';
 import { CTA } from '@/components/cta';
 
 type Blog = {
