@@ -7,3 +7,59 @@ body {
   overflow-x: hidden;
 }
 
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+
+.bannerBackgroundWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+.bgWrapper {
+  position: absolute;
+  top:100%;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (max-width: 1279px) {
+  .bannerBackgroundWrapper {
+    display: none;
+  }
+}
+
+
+/* .bannerBackgroundWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150vw; 
+  height: 190%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgWrapper {
+  position: absolute;
+  top: -100;
+  left: 0;
+  width: 120vw;
+  height: 150%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+} */
