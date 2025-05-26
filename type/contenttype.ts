@@ -1,38 +1,37 @@
-// export type Image = {
-//   url: string;
-//   alt?: string;
-// };
+export type Banner = {
+    banner_title: string;
+    banner_description: string;
+}
 
-// export type Blog = {
-//   title: string;
-//   date: string;
-//   description: string;
-//   image: Image;
-//   url: string;
-// };
+export type Blog ={
+    title: string;
+  url: string;
+  date: string;
+  blog_image: { url: string };
+  body: string;
+}
 
-// export type BannerBlock = {
-//   title: string;
-//   description: string;
-// };
+export type BlogProp = {
+    blogs: Blog[];
+}
 
-// export type BlogBlock = {
-//   blogs: Blog[];
-// };
+export type CTAProps = {
+  cta_title: string;
+  cta_description: string;
+  link?: { title: string; href: string };
+  link_get_started?: { title: string; href: string };
+}
 
-// export type CTASection = {
-//   title: string;
-//   description: string;
-//   buttons: { text: string; href: string }[];
-// };
 
-// export type PageComponent = 
-//   | { banner: BannerBlock }
-//   | { blog_section: BlogBlock }
-//   | { cta_section: CTASection };
+export type ComponentBlock = {
+    hero_banner : Banner;
+    blog: Blog[];
+    cta: CTAProps;}
 
-// export type HomePage = {
-//   title: string;
-//   url: string;
-//   page_components: PageComponent[];
-// };
+export type PageProps = {
+  page: {
+    title: string;
+    page_components: ComponentBlock[];
+  };
+  blogs: Blog[];
+};

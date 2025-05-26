@@ -1,23 +1,11 @@
 import React from 'react';
-
-type Blog = {
-  title: string;
-  url: string;
-  date: string;
-  blog_image: { url: string };
-  body: string;
-};
-
-type Props = {
-  blogs: Blog[];
-};
+import { BlogProp } from '@/type/contenttype';
 import styles from '../styles/BlogSection.module.css';
 
-export const BlogSection = ({ blogs }: Props) => (
+export const BlogSection = ({ blogs }: BlogProp) => (
   <section className={styles.section}>
     <div className={styles.container}>
       <h2 className={styles.title}>Check out these related resources</h2>
-
       <div className={styles.blogGrid}>
         {blogs.map((blog, i) => (
           <div key={i} className={styles.blogCard}>
