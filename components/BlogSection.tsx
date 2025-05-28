@@ -1,8 +1,8 @@
 import React from 'react';
-import { BlogProp } from '@/type/contenttype';
+import { BlogProp } from '@/type/contenttype'
 import styles from '../styles/BlogSection.module.css';
 
-export const BlogSection = ({ blogs }: BlogProp) => (
+export const BlogSection = ({ blogs }: BlogProps) => (
   <section className={styles.section}>
     <div className={styles.container}>
       <h2 className={styles.title}>Check out these related resources</h2>
