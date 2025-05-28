@@ -1,12 +1,11 @@
 import { GetStaticProps } from 'next';
 import Stack from '@/lib/contentstack';
-import Head from 'next/head';
-import { CodeProp, PageProps } from '@/type/contenttype';
+import { CodeProp } from '@/type/contenttype';
 import CodeBlock from '@/components/cscode';
 
 export default function CodePage({ code }: CodeProp) {
   return (
-    <main className="p-5 space-y-6">
+    <main>
       <CodeBlock
         title={code.title}
         description={code.description}
@@ -37,7 +36,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       code: codeBlock,
-      htmlContent: richTextBlock,
     },
     revalidate: 60,
   };

@@ -7,13 +7,6 @@ body {
   overflow-x: hidden;
 }
 
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-
 .bannerBackgroundWrapper {
   position: absolute;
   top: 0;
