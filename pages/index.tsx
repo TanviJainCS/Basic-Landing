@@ -8,9 +8,12 @@ import BG2 from '../public/Background2.svg';
 import Image from 'next/image';
 import Head from 'next/head';
 import { ComponentBlock, PageProps } from '@/type/contenttype';
+import CodeBlock from '../components/cscode';
 
-
-export default function Home({ page, blogs }: PageProps) {
+export default function Home({ page, blogs,code }: PageProps) {
+  const codeBlocks = page.modular_blocks
+    ?.filter(block => block.code_block)
+    .map(block => block.code_block);
   return (
         <>
       <Head>
@@ -46,6 +49,14 @@ export default function Home({ page, blogs }: PageProps) {
         if ('cta' in block) {
           return <CTA key={i} {...block.cta} />;
         }
+        if('codeblock' in block){
+          return    <CodeBlock
+  title={code?.title || 'Untitled'}
+  description={code?.description || ''}
+  language={code?.language || 'javascript'}
+  code={code?.code || '// No code provided'}
+/>
+        }
         return null;
       })}
         <div className="bgWrapper">
@@ -56,6 +67,8 @@ export default function Home({ page, blogs }: PageProps) {
          style={{ objectFit: 'cover', objectPosition:'bottom' }}
         />
       </div>
+
+   
     </main>
     </>
   );
@@ -70,20 +83,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const blogs = await fetchBlogs(); 
   const [entry] = pageResult[0];
-  // entry.page_components.forEach((component: ComponentBlock) => {
-  //   if ('hero_banner' in component) {
-  //     console.log('Hero Banner Block:', component.hero_banner); 
-  //     if ((component.hero_banner as any).uid) {
-  //       console.log('Hero Banner UID:', (component.hero_banner as any).uid);
-  //     }
-  //         }
-  // });
-
+  console.log(entry);
+const codeBlock = entry.page_components.find(
+    (block: any) => block.codeblock
+  )?.codeblock || null;
 
   return {
     props: {
       page: entry,
       blogs,
+      code: codeBlock,
     },
     revalidate: 60,
   };

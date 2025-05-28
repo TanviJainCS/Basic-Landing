@@ -34,4 +34,12 @@ export type PageProps = {
     page_components: ComponentBlock[];
   };
   blogs: Blog[];
-};
+  code: CodeProp;
+}
+
+export type CodeProp = {
+ title: string;
+  description?: string;
+  language: string;
+  code: string;
+}
