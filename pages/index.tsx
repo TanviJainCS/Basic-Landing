@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 import Stack, { fetchBlogs } from '@/lib/contentstack';
-import { Banners } from '../components/Banner';
+import { Banners } from '../components/banner';
 import { BlogSection } from '../components/BlogSection';
 import { CTA } from '@/components/cta';
 import BG1 from '../public/Background1.svg';

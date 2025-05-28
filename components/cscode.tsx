@@ -14,13 +14,15 @@ function stripHtmlTags(html: string): string {
 export default function CodeBlock({ title, description, language, code }: CodeProp) {
   const [copied, setCopied] = useState(false);
   const [highlighted, setHighlighted] = useState('');
+  //console.log(code);
 
 useEffect(() => {
   if (!code) return;
-  const rawCode = stripHtmlTags(code); 
-  const result = hljs.highlight(rawCode.trim(), { language }).value;
+  //const rawCode = stripHtmlTags(code); 
+  const result = hljs.highlight(code.trim(), { language }).value;
   setHighlighted(result);
 }, [code, language]);
+//console.log(highlighted);
 
 
   const copyToClipboard = () => {
@@ -29,7 +31,6 @@ useEffect(() => {
       setTimeout(() => setCopied(false), 2000);
     });
   };
-  console.log(highlighted)
 
   return (
     <div className="card cs-code-block my-4">

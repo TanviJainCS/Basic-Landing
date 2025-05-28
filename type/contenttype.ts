@@ -35,6 +35,7 @@ export type PageProps = {
   };
   blogs: Blog[];
   code: CodeProp;
+  modular_blocks:any;
 }
 
 export type CodeProp = {
