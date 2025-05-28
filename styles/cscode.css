@@ -1,0 +1,56 @@
+/* .cs-code-block {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.cs-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #f9fafb;
+}
+
+.cs-code-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #81a3ec;
+  margin: 0;
+}
+
+.cs-code-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0.25rem 0 0;
+}
+
+.cs-code-copy-btn {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  background-color: #e5e7eb;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cs-code-copy-btn:hover {
+  background-color: #d1d5db;
+}
+
+.cs-code-pre {
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  background-color: #ffffff;
+  color: #1f2937;
+  line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  margin: 0;
+} */

@@ -2,52 +2,43 @@ import { useState, useEffect } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/googlecode.css';
 import 'highlight.js/lib/common';
-import { CodeProp } from '@/type/contenttype'; 
+import { CodeProp } from '@/type/contenttype';
+//import '../styles/cscode.css'; // import at the top
 
-function stripHtmlTags(html: string): string {
-  const div = document.createElement('div');
-  div.innerHTML = html;
-  return div.textContent || div.innerText || '';
-}
 
+// function stripHtmlTags(html: string): string {
+//   let stripped = html.replace(/<\/?pre>/gi, '');
+//   const textarea = document.createElement('textarea');
+//   textarea.innerHTML = stripped;
+//   const decoded = textarea.value;
+//   return decoded.replace(/<br\s*\/?>/gi, '\n');
+// }
 
 export default function CodeBlock({ title, description, language, code }: CodeProp) {
-  const [copied, setCopied] = useState(false);
+  //const [copied, setCopied] = useState(false);
   const [highlighted, setHighlighted] = useState('');
-  //console.log(code);
+   var rawCode;
+ 
+  useEffect(() => {
+    const result = hljs.highlight(code.trim(), { language }).value;
+    setHighlighted(code);
+  }, [code, language]);
 
-useEffect(() => {
-  if (!code) return;
-  //const rawCode = stripHtmlTags(code); 
-  const result = hljs.highlight(code.trim(), { language }).value;
-  setHighlighted(result);
-}, [code, language]);
-//console.log(highlighted);
-
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(code.trim()).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
+  // const copyToClipboard = () => {
+  //   navigator.clipboard.writeText(code.trim()).then(() => {
+  //     setCopied(true);
+  //     setTimeout(() => setCopied(false), 2000);
+  //   });
+  // };
 
   return (
-    <div className="card cs-code-block my-4">
-      <div className="card-header bg-graphite text-white">
-        <div className="d-flex justify-content-between align-items-center">
-          <div>
-            <h5 className="m-0">{title}</h5>
-            {description && <p className="mb-0 small">{description}</p>}
-          </div>
-          <button className="btn btn-sm btn-light" onClick={copyToClipboard}>
-            {copied ? 'Copied!' : 'Copy'}
-          </button>
-        </div>
+    <div>
+        <div>
+        <pre
+        dangerouslySetInnerHTML={{ __html: highlighted}}
+      />
       </div>
-      <div className="card-body p-0">
-        <pre className="m-0 p-3 bg-light" dangerouslySetInnerHTML={{ __html: highlighted }} />
-      </div>
+
     </div>
   );
 }
