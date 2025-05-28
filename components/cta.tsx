@@ -1,7 +1,8 @@
 import BG1 from '../public/Background2.svg';
 import styles from '../styles/CTA.module.css';
-import {CTAProps} from '../type/contenttype';
+import { CTAProps } from '@/type/contenttype';
 
+const bgUrl = BG1.src;
 export const CTA = ({ cta_title, cta_description, link, link_get_started }: CTAProps) => (
   <section className={styles.section}>
 
