@@ -5,7 +5,7 @@ import CodeBlock from '@/components/cscode';
 
 export default function CodePage({ code }: CodeProp) {
   return (
-    <main>
+    <main style={{padding:"36px", textDecoration:'none'}}>
       <CodeBlock
         title={code.title}
         description={code.description}
@@ -29,9 +29,9 @@ export const getStaticProps: GetStaticProps = async () => {
     (block: any) => block.codeblock
   )?.codeblock || null;
 
-  const richTextBlock = entry.page_components.find(
-    (block: any) => block.rich_text
-  )?.rich_text?.rich_text || '';
+  // const richTextBlock = entry.page_components.find(
+  //   (block: any) => block.rich_text
+  // )?.rich_text?.rich_text || '';
 
   return {
     props: {
