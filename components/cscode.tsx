@@ -69,7 +69,7 @@ export default function CodeBlock({ title, description, language, code }: CodePr
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden my-10">
+    <div>
       {title && (
         <div className="px-6 py-4 bg-gray-50">
           <h2 className="text-lg font-semibold">{title}</h2>
@@ -82,7 +82,6 @@ export default function CodeBlock({ title, description, language, code }: CodePr
           return (
             <div
               key={`html-${idx}`}
-              className="prose max-w-none px-6 py-4"
               dangerouslySetInnerHTML={{ __html: part.content }}
             />
           );
@@ -93,15 +92,17 @@ export default function CodeBlock({ title, description, language, code }: CodePr
           return (
             <div
               key={`code-${idx}`}
-              className="relative bg-[#f6f8fa] rounded-lg overflow-hidden mx-6 mb-6"
+              className="relative bg-[#f6f8fa] overflow-hidden"
+              style={{borderRadius:"12px"}}
             >
-              <div className="flex justify-between items-center bg-[#dfe3e6] px-4 py-2 text-xs font-medium text-gray-700">
-                <div className="flex items-center gap-2">
-                  <span className="uppercase tracking-wide">{currentLang}</span>
+              <div className="flex justify-end gap-[5px] bg-[#cdd8e8] p-8"
+              style={{padding:"8px"}}>
+                <div>
                   <select
                     value={currentLang}
                     onChange={(e) => router.push(`/sdk/${e.target.value}`)}
-                    className="ml-2 p-1 border rounded"
+                    style={{padding:"2px"}}
+  
                   >
                     {languages.map((lang) => (
                       <option key={lang} value={lang}>
@@ -112,12 +113,12 @@ export default function CodeBlock({ title, description, language, code }: CodePr
                 </div>
                 <button
                   onClick={() => copyToClipboard(rawText)}
-                  className="text-xs bg-white hover:bg-gray-200 border border-gray-300 rounded px-2 py-1"
+                  style={{padding:"2px"}}
                 >
                   {copied ? 'Copied!' : 'Copy'}
                 </button>
               </div>
-              <pre className="overflow-x-auto text-sm leading-relaxed p-4 m-0">
+              <pre style={{paddingLeft:"12px"}}>
                 <code dangerouslySetInnerHTML={{ __html: highlighted }} />
               </pre>
             </div>

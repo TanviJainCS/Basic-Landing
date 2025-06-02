@@ -9,7 +9,7 @@ export default function SDKPage({ codeBlock }: CodeProp) {
   console.log(codeBlock)
 
   return (
-  <main style={{padding:"36px"}}>
+  <main className="px-9 py-9 w-[85%] flex justify-center mx-auto">
     <CodeBlock
           title={null}
           description={null}
