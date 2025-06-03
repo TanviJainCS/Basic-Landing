@@ -1,21 +1,42 @@
-import React from 'react';
-import CodeBlock from '../components/cscode';
-import { CodeProp } from '@/type/contenttype';
+// import { GetStaticProps } from 'next';
+// import Stack from '@/lib/contentstack';
+// import { CodeProp } from '@/type/contenttype';
+// import CodeBlock from '@/components/cscode';
 
-export default function CodePage({ title, description, code }: CodeProp) {
-  return (
-    <main className="p-5" style={{ overflowX: 'hidden' }}>
-      <h1 className="mb-5">{title}</h1>
-      <p>{description}</p>
-       <CodeBlock
-        title={code?.title || 'Untitled'}
-        description={code?.description || ''}
-        language={code?.language || 'javascript'}
-        code={code?.code || '// No code provided'}
-      />
-      {/* <CodeBlock>
-        <pre lang="javascript">{code}</pre>
-      </CodeBlock> */}
-    </main>
-  );
-}
+// export default function CodePage({ code }: CodeProp) {
+//   return (
+//     <main style={{padding:"36px", textDecoration:'none'}}>
+//       <CodeBlock
+//         title={code.title}
+//         description={code.description}
+//         language={code.language}
+//         code={code.code}
+//       />
+//     </main>
+//   );
+// }
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const pageResult = await Stack.ContentType('page')
+//     .Query()
+//     .where('url', '/')
+//     .toJSON()
+//     .find();
+
+//   const [entry] = pageResult[0];
+
+//   const codeBlock = entry.page_components.find(
+//     (block: any) => block.codeblock
+//   )?.codeblock || null;
+
+//   // const richTextBlock = entry.page_components.find(
+//   //   (block: any) => block.rich_text
+//   // )?.rich_text?.rich_text || '';
+
+//   return {
+//     props: {
+//       code: codeBlock,
+//     },
+//     revalidate: 60,
+//   };
+// };

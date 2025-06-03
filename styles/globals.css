@@ -5,14 +5,8 @@
 html,
 body {
   overflow-x: hidden;
+  font-family:Arial, Helvetica, sans-serif;
 }
-
-
-html,
-body {
-  overflow-x: hidden;
-}
-
 
 .bannerBackgroundWrapper {
   position: absolute;
@@ -24,6 +18,22 @@ body {
   pointer-events: none;
 }
 
+a:-webkit-any-link {
+  color: rgb(164, 71, 240)!important;
+  text-decoration-line: none !important;
+  text-decoration-color: rgb(164, 71, 240) !important;
+}
+
+a:-webkit-any-link:visited {
+  color: rgb(164, 71, 240) !important;
+}
+
+a:-webkit-any-link:hover,
+a:-webkit-any-link:focus {
+  color: rgb(164, 71, 240) !important;
+  text-decoration-line: none !important;
+}
+
 
 .bgWrapper {
   position: absolute;
@@ -32,7 +42,7 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  overflow: hidden;
+  
 }
 
 @media (max-width: 1279px) {
@@ -62,4 +72,27 @@ body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
+} */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-border-radius: 8px;
+}
+
+thead {
+  background-color: #f6f8fa;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.8rem 1.5rem;
+  text-align: left;
+}
+
+/* div {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 } */

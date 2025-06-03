@@ -49,14 +49,12 @@ export default function Home({ page, blogs,code }: PageProps) {
         if ('cta' in block) {
           return <CTA key={i} {...block.cta} />;
         }
-        if('codeblock' in block){
-          return    <CodeBlock
-  title={code?.title || 'Untitled'}
-  description={code?.description || ''}
-  language={code?.language || 'javascript'}
-  code={code?.code || '// No code provided'}
-/>
-        }
+        // if('codeblock' in block){
+        //   return    <CodeBlock title={code?.title || 'Untitled'}
+        //   description={code?.description || ''}
+        //   language={code?.language || 'javascript'}
+        //   code={code?.code || '// No code provided'}/>
+        // }
         return null;
       })}
         <div className="bgWrapper">
@@ -83,16 +81,15 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const blogs = await fetchBlogs(); 
   const [entry] = pageResult[0];
-  console.log(entry);
-const codeBlock = entry.page_components.find(
-    (block: any) => block.codeblock
-  )?.codeblock || null;
+// const codeBlock = entry.page_components.find(
+//     (block: any) => block.codeblock
+//   )?.codeblock || null;
 
   return {
     props: {
       page: entry,
       blogs,
-      code: codeBlock,
+      //code: codeBlock,
     },
     revalidate: 60,
   };
