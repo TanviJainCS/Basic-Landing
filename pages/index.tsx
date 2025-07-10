@@ -40,7 +40,6 @@ export default function Home({ page, blogs,code }: PageProps) {
     
       {page.page_components.map((block, i) => {
         if ('hero_banner' in block) {
-          //console.log(block.hero_banner);
           return <Banners key={i} {...block.hero_banner} />;
         }
         if ('blog' in block) {
@@ -57,6 +56,7 @@ export default function Home({ page, blogs,code }: PageProps) {
         // }
         return null;
       })}
+
         <div className="bgWrapper">
         <Image
           src={BG2}

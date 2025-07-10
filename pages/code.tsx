@@ -29,10 +29,6 @@
 //     (block: any) => block.codeblock
 //   )?.codeblock || null;
 
-//   // const richTextBlock = entry.page_components.find(
-//   //   (block: any) => block.rich_text
-//   // )?.rich_text?.rich_text || '';
-
 //   return {
 //     props: {
 //       code: codeBlock,
