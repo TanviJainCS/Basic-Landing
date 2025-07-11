@@ -12,8 +12,6 @@ This is a basic landing page built with [Contentstack CMS](https://www.contentst
 - Language switcher and copy button for code
 - Responsive layout with Tailwind CSS
 
----
-
 ## Tech Stack
 
 - Next.js
@@ -21,8 +19,6 @@ This is a basic landing page built with [Contentstack CMS](https://www.contentst
 - Tailwind CSS
 - Rehype + rehype-highlight
 - html-react-parser
-
----
 
 ## 1. Contentstack Setup
 
@@ -39,7 +35,6 @@ This is a basic landing page built with [Contentstack CMS](https://www.contentst
 - `cta`: heading, button, link
 - `code_block`: title, description, language, code (rich text with `<pre>`)
 
----
 
 ## 2. Project Setup
 
@@ -57,8 +52,6 @@ CONTENTSTACK_DELIVERY_TOKEN=your_delivery_token
 CONTENTSTACK_ENVIRONMENT=your_env
 ```
 
----
-
 ## 3. Development
 
 ### Start the dev server
@@ -68,6 +61,3 @@ npm run dev
 ```
 
 Then visit: `http://localhost:3000/sdk/java` or `/sdk/typescript` (based on your CMS data).
-
-```
-
