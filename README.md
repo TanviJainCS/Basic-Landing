@@ -1,40 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Contentstack + Next.js Landing Page with Syntax Highlighting
 
-## Getting Started
+This is a basic landing page built with [Contentstack CMS](https://www.contentstack.com/) and [Next.js](https://nextjs.org/), with server-side code highlighting using `rehype-highlight`.
 
-First, run the development server:
+---
+
+## Features
+
+- Content-managed pages using Contentstack
+- Modular blocks: Hero, Blogs, CTA, Code Blocks
+- Syntax-highlighted code blocks via `<pre>` tags
+- Language switcher and copy button for code
+- Responsive layout with Tailwind CSS
+
+---
+
+## Tech Stack
+
+- Next.js
+- Contentstack CMS
+- Tailwind CSS
+- Rehype + rehype-highlight
+- html-react-parser
+
+---
+
+## 1. Contentstack Setup
+
+### Create a `page` Content Type with:
+
+- `title` (Text)
+- `url` (Text)
+- `page_components` (Modular Block)
+
+#### Modular Blocks:
+
+- `hero_banner`: title, subtitle, image
+- `blog`: references to blog entries
+- `cta`: heading, button, link
+- `code_block`: title, description, language, code (rich text with `<pre>`)
+
+---
+
+## 2. Project Setup
+
+### Install dependencies
+
+```bash
+npm install
+````
+
+### Create `.env.local`
+
+```env
+CONTENTSTACK_API_KEY=your_api_key
+CONTENTSTACK_DELIVERY_TOKEN=your_delivery_token
+CONTENTSTACK_ENVIRONMENT=your_env
+```
+
+---
+
+## 3. Development
+
+### Start the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit: `http://localhost:3000/sdk/java` or `/sdk/typescript` (based on your CMS data).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
