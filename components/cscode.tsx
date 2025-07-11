@@ -83,37 +83,43 @@ export default function CodeBlock({
         if (part.type === "code") {
           const rawText = decodeHtml(part.content);
           return (
-            <div key={`code-${idx}`} className="mb-4 rounded">
-              <div className="flex justify-end gap-[5px] bg-[#cdd8e8] p-2">
-                <select
-                  value={currentLang}
-                  onChange={(e) => router.push(`/sdk/${e.target.value}`)}
-                  className="p-1"
-                >
-                  {languages.map((lang) => (
-                    <option key={lang} value={lang}>
-                      {lang}
-                    </option>
-                  ))}
-                </select>
+            <div
+              key={`code-${idx}`}
+              className="relative bg-[#f6f8fa] overflow-hidden"
+              style={{borderRadius:"12px"}}
+            >
+              <div className="flex justify-end gap-[5px] bg-[#cdd8e8] p-8"
+              style={{padding:"8px"}}>
+                <div>
+                  <select
+                    value={currentLang}
+                    onChange={(e) => router.push(`/sdk/${e.target.value}`)}
+                    style={{padding:"2px"}}
+  
+                  >
+                    {languages.map((lang) => (
+                      <option key={lang} value={lang}>
+                        {lang}
+                      </option>
+                    ))}
+                  </select>
+                </div>
                 <button
                   onClick={() => copyToClipboard(rawText)}
-                  className="p-1"
+                  style={{padding:"2px"}}
                 >
-                  {copied ? "Copied!" : "Copy"}
+                  {copied ? 'Copied!' : 'Copy'}
                 </button>
               </div>
+              <pre style={{paddingLeft:"12px"}}>
+                <code dangerouslySetInnerHTML={{ __html: part.content }} />
+              </pre>
 
-              <div
-                className="p-3"
-                dangerouslySetInnerHTML={{ __html: part.content }}
-              />
+
             </div>
           );
         }
 
         return null;
       })}
-    </div>
-  );
-}
+    </div>);}
