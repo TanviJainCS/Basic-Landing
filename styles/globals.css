@@ -96,3 +96,21 @@ th, td {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 } */
+
+/* pre {
+  background: #f6f8fa;
+  padding:0px;
+
+} */
+
+pre {
+  margin-top: 0rem;
+  background-color: #f7f9fc;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+}
+
+.hljs {
+  background: transparent !important;
+}
